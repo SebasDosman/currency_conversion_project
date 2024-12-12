@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class MenuUtil {
     public static void showMenu() throws IOException, InterruptedException {
-        JOptionPane.showMessageDialog(null, "Welcome to the Currency Converter!", "Welcome", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Welcome to the currency converter!", "Welcome", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public static int optionMenu() {
