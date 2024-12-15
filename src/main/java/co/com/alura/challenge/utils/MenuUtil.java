@@ -1,10 +1,5 @@
 package co.com.alura.challenge.utils;
 
-import co.com.alura.challenge.config.AppConfig;
-import co.com.alura.challenge.services.IApiConsumptionService;
-import co.com.alura.challenge.services.implementations.ApiConsumptionService;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 import javax.swing.*;
 import java.io.IOException;
 

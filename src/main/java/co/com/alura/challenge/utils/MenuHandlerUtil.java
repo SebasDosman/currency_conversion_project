@@ -43,12 +43,12 @@ public class MenuHandlerUtil {
 
     private static void handleConversion(int option) throws IOException, InterruptedException {
         switch (option) {
-            case 1 -> performConversion("USD", "COP", "Enter the amount in USD", "USD to COP", (amount, rate) -> amount * rate);
-            case 2 -> performConversion("COP", "USD", "Enter the amount in COP", "COP to USD", (amount, rate) -> amount * rate);
-            case 3 -> performConversion("USD", "EUR", "Enter the amount in USD", "USD to EUR", (amount, rate) -> amount * rate);
-            case 4 -> performConversion("EUR", "USD", "Enter the amount in EUR", "EUR to USD", (amount, rate) -> amount * rate);
-            case 5 -> performConversion("USD", "ARS", "Enter the amount in USD", "USD to ARS", (amount, rate) -> amount * rate);
-            case 6 -> performConversion("ARS", "USD", "Enter the amount in ARS", "ARS to USD", (amount, rate) -> amount * rate);
+            case 1 -> performConversion("USD", "COP", "Enter the amount in USD", "USD to COP", ConverterUtil::convertCurrency);
+            case 2 -> performConversion("COP", "USD", "Enter the amount in COP", "COP to USD", ConverterUtil::convertCurrency);
+            case 3 -> performConversion("USD", "EUR", "Enter the amount in USD", "USD to EUR", ConverterUtil::convertCurrency);
+            case 4 -> performConversion("EUR", "USD", "Enter the amount in EUR", "EUR to USD", ConverterUtil::convertCurrency);
+            case 5 -> performConversion("USD", "ARS", "Enter the amount in USD", "USD to ARS", ConverterUtil::convertCurrency);
+            case 6 -> performConversion("ARS", "USD", "Enter the amount in ARS", "ARS to USD", ConverterUtil::convertCurrency);
             default -> JOptionPane.showMessageDialog(null, "Invalid option", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }

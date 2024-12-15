@@ -14,7 +14,7 @@ public class ApiConsumptionService implements IApiConsumptionService {
     private String apiKey;
 
     @Override
-    public HttpResponse<String> getApiData(String currency) throws IOException, InterruptedException {
+    public HttpResponse<String> getApiData(String currency) {
         String url = "https://v6.exchangerate-api.com/v6/".concat(apiKey).concat("/latest/").concat(currency);
 
         HttpClient client = HttpClient.newHttpClient();
@@ -22,6 +22,10 @@ public class ApiConsumptionService implements IApiConsumptionService {
                 .uri(URI.create(url))
                 .build();
 
-        return client.send(request, HttpResponse.BodyHandlers.ofString());
+        try {
+            return client.send(request, HttpResponse.BodyHandlers.ofString());
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
